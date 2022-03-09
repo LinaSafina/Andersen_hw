@@ -1,28 +1,32 @@
 // Task 1
 
-const num1 = +prompt('Please, enter the first number');
-const num2 = +prompt('Please, enter the second number');
+const ERROR_MESSAGE = 'Некорректный ввод!';
+const num1 = prompt('Please, enter the first number (task1)').trim();
+const num2 = prompt('Please, enter the second number (task1)').trim();
 
-if (Number.isNaN(num1) || Number.isNaN(num2)) {
-  console.log('Некорректный ввод!');
+if (num1 === '' || num2 === '' || !Number(num1) || !Number(num2)) {
+  console.log(ERROR_MESSAGE);
 } else {
-  console.log(num1.toString(num2));
+  console.log(Number(num1).toString(+num2));
 }
 
 // Task 2
 
-const ERROR_MESSAGE = 'Некорректный ввод!';
-const PROMPT_MESSAGE = 'Please, enter the number';
-const number1 = +prompt(PROMPT_MESSAGE);
+const number1 = prompt('Please, enter the 1st number (task2)').trim();
 
-if (Number.isNaN(number1)) {
-  console.log(ERROR_MESSAGE);
-} else {
-  const number2 = +prompt(PROMPT_MESSAGE);
-
-  if (Number.isNaN(number2)) {
+const isValidNumber = function (num) {
+  if (num === '' || !Number(num)) {
     console.log(ERROR_MESSAGE);
+    return false;
   } else {
-    console.log(`Ответ: ${number1 + number2}, ${number1 / number2}`);
+    return true;
+  }
+};
+
+if (isValidNumber(number1)) {
+  const number2 = prompt('Please, enter the 2nd number (task2)').trim();
+
+  if (isValidNumber(number2)) {
+    console.log(`Ответ: ${+number1 + +number2}, ${number1 / number2}`);
   }
 }
