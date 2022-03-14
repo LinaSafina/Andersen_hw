@@ -2,6 +2,7 @@
 
 const makeObjectDeepCopy = function (obj) {
   const newObj = {};
+
   for (const key in obj) {
     if (obj[key] instanceof Object) {
       newObj[key] = makeObjectDeepCopy(obj[key]);
@@ -9,18 +10,21 @@ const makeObjectDeepCopy = function (obj) {
       newObj[key] = obj[key];
     }
   }
+
   return newObj;
 };
 
 // Task 2
 
 const selectFromInterval = function (arr, num1, num2) {
-  isArrayOfNumbers =
+  const isArrayOfNumbers =
     Array.isArray(arr) &&
     arr.every((num) => typeof num === 'number' && !Number.isNaN(num));
+
   if (!isArrayOfNumbers) {
     throw new Error('Please, enter an array of numbers!');
   }
+
   if (typeof num1 !== 'number' || typeof num2 !== 'number') {
     throw new Error('Two numbers are expected!');
   }
