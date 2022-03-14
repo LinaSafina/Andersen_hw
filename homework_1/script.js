@@ -14,19 +14,19 @@ if (num1 === '' || num2 === '' || !Number(num1) || !Number(num2)) {
 
 const number1 = prompt('Please, enter the 1st number (task2)').trim();
 
-const isValidNumber = function (num) {
-  if (num === '' || !Number(num)) {
-    console.log(ERROR_MESSAGE);
-    return false;
-  } else {
-    return true;
-  }
-};
-
 if (isValidNumber(number1)) {
   const number2 = prompt('Please, enter the 2nd number (task2)').trim();
 
   if (isValidNumber(number2)) {
     console.log(`Ответ: ${+number1 + +number2}, ${number1 / number2}`);
+  }
+}
+
+function isValidNumber(num) {
+  if (num === '' || !Number(num)) {
+    console.log(ERROR_MESSAGE);
+    return false;
+  } else {
+    return true;
   }
 }
