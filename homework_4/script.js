@@ -2,7 +2,7 @@
 
 function concatStrings(str, separator) {
   if (typeof str !== 'string') {
-    return str || 'Вы ничего не ввели';
+    return str || '';
   }
 
   function innerFunc(str2) {
@@ -33,42 +33,34 @@ class Calculator {
     this.num1 = num1;
     this.num2 = num2;
   }
-  setX(num) {
+  setX = (num) => {
     if (!num || typeof num !== 'number') {
       throw new Error('Please, enter ONE number');
     }
 
     this.num1 = num;
-  }
-  setY(num) {
+  };
+  setY = (num) => {
     if (!num || typeof num !== 'number') {
       throw new Error('Please, enter ONE number');
     }
 
     this.num2 = num;
-  }
-  logSum() {
+  };
+  logSum = () => {
     console.log(this.num1 + this.num2);
-  }
-  logMul() {
+  };
+  logMul = () => {
     console.log(this.num1 * this.num2);
-  }
-  logSub() {
+  };
+  logSub = () => {
     console.log(this.num1 - this.num2);
-  }
-  logDiv() {
+  };
+  logDiv = () => {
     if (this.num2 === 0) {
       throw new Error('Cannot divide by 0');
     }
 
     console.log(this.num1 + this.num2);
-  }
+  };
 }
-
-const calculator = new Calculator(12, 3);
-calculator.setX(13);
-
-const mulpiply = calculator.logMul;
-console.log(mulpiply);
-const calc = { num1: 10, num2: 2 };
-mulpiply.call(calc);
