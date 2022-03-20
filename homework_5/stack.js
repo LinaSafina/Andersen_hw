@@ -65,12 +65,4 @@ const Stack = class Stack {
   }
 };
 
-// const stack1 = new Stack(5);
-// const stack2 = new Stack();
-// const stack3 = Stack.fromIterable([1, 2, 3]);
-
-// console.log(stack1);
-// console.log(stack2);
-// console.log(stack3);
-
 // module.exports = { Stack };
