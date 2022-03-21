@@ -10,6 +10,7 @@ const LinkedList = class LinkedList {
     this.head = null;
     this.tail = null;
   }
+
   append(elem) {
     const newNode = new LinkedListNode(elem);
 
@@ -21,6 +22,7 @@ const LinkedList = class LinkedList {
       this.tail = newNode;
     }
   }
+
   prepend(elem) {
     const newNode = new LinkedListNode(elem);
 
@@ -31,6 +33,7 @@ const LinkedList = class LinkedList {
       this.tail = newNode;
     }
   }
+
   find(elem) {
     if (!this.head) {
       return null;
@@ -47,6 +50,7 @@ const LinkedList = class LinkedList {
 
     return null;
   }
+
   toArray() {
     let current = this.head;
     const arr = [];
@@ -58,6 +62,7 @@ const LinkedList = class LinkedList {
 
     return arr;
   }
+
   static fromIterable(iterable) {
     if (
       iterable === null ||
