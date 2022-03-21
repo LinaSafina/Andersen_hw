@@ -33,6 +33,7 @@ class Calculator {
     this.num1 = num1;
     this.num2 = num2;
   }
+
   setX = (num) => {
     if (!num || typeof num !== 'number') {
       throw new Error('Please, enter ONE number');
@@ -40,6 +41,7 @@ class Calculator {
 
     this.num1 = num;
   };
+
   setY = (num) => {
     if (!num || typeof num !== 'number') {
       throw new Error('Please, enter ONE number');
@@ -47,15 +49,19 @@ class Calculator {
 
     this.num2 = num;
   };
+
   logSum = () => {
     console.log(this.num1 + this.num2);
   };
+
   logMul = () => {
     console.log(this.num1 * this.num2);
   };
+
   logSub = () => {
     console.log(this.num1 - this.num2);
   };
+
   logDiv = () => {
     if (this.num2 === 0) {
       throw new Error('Cannot divide by 0');
