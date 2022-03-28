@@ -8,10 +8,8 @@ class StackNode {
 }
 
 const Stack = class Stack {
-  constructor(maxSize) {
-    if (!maxSize) {
-      this.maxSize = 10;
-    } else if (typeof maxSize !== 'number' || maxSize < 0) {
+  constructor(maxSize = 10) {
+    if (typeof maxSize !== 'number' || maxSize < 0) {
       throw new Error('Please enter a valid number!');
     } else {
       this.maxSize = maxSize;
@@ -27,6 +25,7 @@ const Stack = class Stack {
     }
 
     const newNode = new StackNode(elem);
+
     newNode.previous = this.top || null;
     this.size++;
     this.top = newNode;
@@ -70,11 +69,12 @@ const Stack = class Stack {
   }
 
   static fromIterable(iterable) {
-    if (
+    const isNotIterable =
       iterable === null ||
       iterable === undefined ||
-      typeof iterable[Symbol.iterator] !== 'function'
-    ) {
+      typeof iterable[Symbol.iterator] !== 'function';
+
+    if (isNotIterable) {
       throw new Error('Please enter an iterable!');
     }
 

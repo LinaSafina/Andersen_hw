@@ -5,7 +5,7 @@ class LinkedListNode {
   }
 }
 
-const LinkedList = class LinkedList {
+class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -80,4 +80,4 @@ const LinkedList = class LinkedList {
 
     return newLinkedList;
   }
-};
+}
