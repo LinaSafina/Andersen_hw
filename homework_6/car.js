@@ -1,10 +1,10 @@
 class Car {
   #brand = 'brand';
   #model = 'model';
-  #yearOfManufacturing = 1905;
-  #maxSpeed = 100;
-  #maxFuelVolume = 10;
-  #fuelConsumption = 15;
+  #yearOfManufacturing;
+  #maxSpeed;
+  #maxFuelVolume;
+  #fuelConsumption;
   #currentFuelVolume = 0;
   #isStarted = false;
   #mileage = 0;
@@ -102,7 +102,7 @@ class Car {
       throw new Error('Неверное количество топлива для заправки');
     }
 
-    if (this.#maxFuelVolume - this.#currentFuelVolume > litre) {
+    if (this.#maxFuelVolume - this.#currentFuelVolume < litre) {
       throw new Error('Топливный бак переполнен');
     }
 
@@ -126,7 +126,7 @@ class Car {
       throw new Error('Машина должна быть заведена, чтобы ехать');
     }
 
-    const fuelVolume = speed * hours * this.#fuelConsumption;
+    const fuelVolume = (speed * hours * this.#fuelConsumption / 100);
 
     if (fuelVolume > this.#currentFuelVolume) {
       throw new Error('Недостаточно топлива');
