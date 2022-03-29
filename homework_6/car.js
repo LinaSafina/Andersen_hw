@@ -40,7 +40,7 @@ class Car {
   }
 
   get maxSpeed() {
-    return this.#maxSpeed;
+    return `${this.#maxSpeed} км/ч`;
   }
 
   set maxSpeed(speed) {
@@ -60,7 +60,7 @@ class Car {
   }
 
   get fuelConsumption() {
-    return this.#fuelConsumption;
+    return `${this.#fuelConsumption} л/100км`;
   }
 
   set fuelConsumption(consumption) {
@@ -126,7 +126,7 @@ class Car {
       throw new Error('Машина должна быть заведена, чтобы ехать');
     }
 
-    const fuelVolume = (speed * hours * this.#fuelConsumption / 100);
+    const fuelVolume = (speed * hours * this.#fuelConsumption) / 100;
 
     if (fuelVolume > this.#currentFuelVolume) {
       throw new Error('Недостаточно топлива');
