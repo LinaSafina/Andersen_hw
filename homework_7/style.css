@@ -1,5 +1,8 @@
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   min-height: 100vh;
 }
@@ -18,10 +21,13 @@ main {
   justify-content: space-around;
 }
 
-.calculator__enter {
-  font-size: 2em;
+#input {
+  font-size: 2.5em;
+  text-align: right;
   height: 60px;
   border: 3px solid grey;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .calculator__buttons {
@@ -33,7 +39,7 @@ main {
   row-gap: 8px;
 }
 
-.calculator__buttons div {
+button {
   font-size: 2em;
   height: 45px;
   width: 45px;
@@ -45,11 +51,11 @@ main {
   align-items: center;
 }
 
-.calculator__buttons .operation {
+.calculator__buttons .operator {
   background-color: rgb(83, 82, 82);
 }
 
-.calculator__buttons .equals {
+#equals {
   grid-row-start: 3;
   grid-row-end: 5;
   grid-column-start: 5;
@@ -58,12 +64,12 @@ main {
   background-color: blue;
 }
 
-.calculator__buttons .delete {
+#deleteAll {
   background-color: red;
 }
 
 .calculator__buttons .equals,
 .calculator__buttons .delete,
-.calculator__buttons .operation {
+.calculator__buttons .operator {
   color: white;
 }
