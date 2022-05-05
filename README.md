@@ -2,6 +2,7 @@
 
 Homeworks
 Задания по JS из курса Basic JS компании Andersen (Aston)
+[Deploy]( https://linasafina.github.io/Andersen_hw/)
 
 ## Homework 1
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_1)
@@ -156,7 +157,6 @@ module.exports = { Stack };
 
 ## Homework 7
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_7)
-[Deploy]()
 
 Написать калькулятор.
 
