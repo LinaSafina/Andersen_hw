@@ -1,7 +1,9 @@
 # Andersen
 
 Homeworks
+
 Задания по JS из курса Basic JS компании Andersen (Aston)
+
 [Deploy]( https://linasafina.github.io/Andersen_hw/)
 
 ## Homework 1
