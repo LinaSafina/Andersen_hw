@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  margin: 20px auto;
+  width: 300px;
+  border: 3px solid grey;
+}
+
+.calculator {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#input {
+  font-size: 2em;
+  text-align: right;
+  height: 60px;
+  border: 3px solid grey;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+
+.calculator__buttons {
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+}
+
+button {
+  font-size: 2em;
+  height: 45px;
+  width: 45px;
+  background-color: rgb(235, 232, 232);
+  border: 1px solid grey;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator__buttons .operator {
+  background-color: rgb(83, 82, 82);
+}
+
+#equals {
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  height: auto;
+  background-color: blue;
+}
+
+#deleteAll {
+  background-color: red;
+}
+
+.calculator__buttons .equals,
+.calculator__buttons .delete,
+.calculator__buttons .operator {
+  color: white;
+}
