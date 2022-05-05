@@ -1,92 +1,166 @@
 # Andersen
 
 Homeworks
+Задания по JS из курса Basic JS компании Andersen (Aston)
 
-## Getting started
+## Homework 1
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_1)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+1) С помощью встроенной браузерной функции prompt поочерёдно ввести два значения. Если оба значения являются валидными числами, то вывести в консоли результат в виде первого числа в системе счисления второго.
+Если хотя бы одно из введённых значений является некорректным числом, вывести в консоли сообщение: "Некорректный ввод!" и завершить программу.
+> Примеры:
+Вводим 10 и 2, получаем 1010
+Вводим 872 и 8, получаем 1550
+Вводим 2 и 'abc', получаем "Некорректный ввод!"
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+2) С помощью встроенной браузерной функции prompt поочерёдно ввести два значения. Если первое значение является невалидным числом, вывести в консоли сообщение: "Некорректный ввод!" и завершить программу. В ином случае, если второе значение является невалидным числом вывести такое же сообщение об ошибке и завершить программу. Если оба значения являются валидными числами, то вывести в консоль результат в виде: "Ответ: [сумма двух чисел], [частное двух чисел]."
+> Примеры:
+Вводим 10 и 2, получаем "Ответ: 12, 5."
+Вводим 872 и 8, получаем "Ответ: 880, 109."
+Вводим 'abc', получаем "Некорректный ввод!"
 
-## Add your files
+## Homework 2
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_2)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+1) Написать свою функцию для глубокого копирования объектов. При этом алгоритм должен осуществляться вручную (никаких вариантов с использованием готовых библиотек или JSON.stringify() + JSON.parse(), за это сразу 0 баллов за первую задачу). Функция должна называться makeObjectDeepCopy. Это важно. Принимать функция должна один параметр - объект, копию которого нужно сделать.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/linasafina16/andersen.git
-git branch -M main
-git push -uf origin main
-```
+2) Написать функцию, которая принимает три аргумента: массив чисел, первое значение интервала, второе значение интервала. Результатом вызова функции должен быть массив из значений переданного массива (в качестве первого параметра), которые входят в этот интервал (концы включая). Если в качестве первого параметра передан не массив или массив, содержащий не только числа - кидать ошибку (throw new Error(...)). Если хотя бы одно из значений интервала (имеются ввиду параметры функции selectFromInterval) - невалидное число!, то также кидать ошибку.
+Если первое значение интервала < второго (имеются ввиду параметры функции selectFromInterval), то считать за интервал значения от первого до второго, в ином случае - от второго до первого.
+Функция должна называться selectFromInterval.
+> Примеры:
+Вызываем функцию: selectFromInterval([1,3,5], 5, 2)
+Получаем результат: [3,5]
+Вызываем функцию: selectFromInterval([-2, -15, 0, 4], -13, -5)
+Получаем результат: []
+Вызываем функцию: selectFromInterval(['aaa'], 2, 3)
+Получаем результат: Ошибка!
 
-## Integrate with your tools
+3) Создать обычный объект и сделать его итерируемым. При этом итерация должна происходить следующим образом:
+Должны поочерёдно проходиться все значения от свойства объекта from, до свойства to. (в случае если to < from - должна возникать ошибка).
+Если to или from не указаны ИЛИ to или from не являются числами, должна возникать ошибка. Объект должен называться myIterable.
+> Примеры:
+const myIterable = { from: 1, to: 4 };
+for (let item of myIterable) {
+ console.log(item); // 1, 2, 3, 4
+}
 
-- [ ] [Set up project integrations](https://gitlab.com/linasafina16/andersen/-/settings/integrations)
+const myIterable = { from: 'aaa', to: 4 };
+for (let item of myIterable) { // Ошибка!
+ console.log(item);
+}
 
-## Collaborate with your team
+## Homework 3
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_3)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Написать свою реализацию встроенной функции массивов filter (map, reduce). Назвать функцию myFilter и сделать так, чтобы любой массив мог использовать данную функцию как "родную". В качестве параметров он должен принимать callback-функцию и как необязательный параметр объект, который будет использован в качестве this в рамках внутренних вызовов данной callback-функции.
+В конечном итоге ваша реализация myFilter должна работать точно также как и встроенный метод filter. Callback-функция, переданная в качестве параметра, также должна вызываться с теми же параметрами, что и оригинал (элемент, индекс, массив).
 
-## Test and Deploy
+## Homework 4
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_4)
 
-Use the built-in continuous integration in GitLab.
+Реализовать функцию concatStrings, которая может быть вызвана следующим образом: concatStrings('first')('second')('third')().
+Результатом вызова данной функции должна являться новая строка, содержащая все переданные таким образом строки.
+Если одно из значений является невалидной строкой (пустая строка - это валидная строка), то возвращать результат, полученный до текущего момента (ошибок не бросать!)
+Кроме этого добавить функции второй необязательный параметр - separator. Он также должен являться валидной строкой, однако в случаях, когда вместо валидной строки на его место передано что-то ещё - запускаем функцию как будто без него вообще (иными словами игнорируем, никаких ошибок кидать не нужно). Если же всё-таки параметр был валидной строкой, то результирующая строка должна содержать все переденные строки, разделённые значчением separator.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+> Примеры:
+Вызываем функцию: concatStrings('first')('second')('third')()
+Получаем результат: 'firstsecondthird'
+Вызываем функцию: concatStrings('first', null)('second')()
+Получаем результат: 'firstsecond'
+Вызываем функцию: concatStrings('first', '123')('second')('third')()
+Получаем результат: 'first123second123third'
+Вызываем функцию: concatStrings('some-value')('')('')(null)
+Получаем результат: 'some-value'
+Вызываем функцию: concatStrings('some-value')(2)
+Получаем результат: 'some-value'
+Вызываем функцию: concatStrings('some-value')('333')(123n)
+Получаем результат: 'some-val333'
 
-***
 
-# Editing this README
+## Homework 5
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_5)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Создать класс Stack.
+В качестве единственного необязательного параметра конструктор Stack должен принимать максимальное количество элементов в стеке. Если параметр является невалидным числом, генерировать ошибку. Если параметр не указан, задавать максимальный размер стека равным 10.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Реализовать публичные методы:
+- push(elem) - добавить новый элемент в стек (генерировать ошибку, если стек переполнен);
+- pop() - удалить верхний элемент стека и вернуть его (генерировать ошибку, если стек пуст);
+- peek() - получить верхний элемент стека (вернуть null, если стек пуст);
+- isEmpty() - возвращает логическое значение (пуст стек или нет);
+- toArray() - возвращает новый массив, состоящий из элементов стека.
 
-## Name
-Choose a self-explaining name for your project.
+Реализовать статические публичные методы:
+- fromIterable(iterable) - возвращает новый Stack, элементами которого служат элементы переданной итерируемой сущности. Максимальное количество элементов такого стека должно быть равно длине этой сущности. Если сущность не является итерируемой генерировать ошибку.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Этого достаточно для получения максимального балла по данному ДЗ.
+На что буду обращать внимание:
+1) В первую и главную очередь буду смотреть на понимание структуры данных. Т.е. если увижу в классе Stack что-то по типу обычного перебора элементов по индексам или же использования встроенных методов массива, то минус задание. Реализация класса должна полностью соответствовать сущности того, что вы реализуете. Если стек работает только через верхний элемент, то и "крутиться" нужно от этого.
+2) Кроме этого, естественно, все функции класса должны отрабатывать корректно. Будут проверяться тестами. Однако ещё раз обращаю ваше внимание, что даже при закрытии 100% тестов можно получить очень низкий балл из-за некорректной реализации.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+В репозитории от вас жду один файл с названием stack.js, в котором лежит только реализация вашего класса. Класс, повторюсь, называем Stack. Также, пожалуйста, добавьте в конце файла такую вот операцию:
+module.exports = { Stack };
+Это нужно, чтобы мне самостоятельно не дописывать её в каждом вашем файле.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Кому будет скучно/недостаточно, можете сделать ещё один класс LinkedList. Конструктор этого класса не должен принимать никаких параметров.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Реализовать публичные методы:
+- append(elem) - добавить элемент в конец связного списка;
+- prepend(elem) - добавить элемент в начало связного списка;
+- find(elem) - осуществить поиск по элементам по заданному значению. Вернуть найденный элемент или null, если такого элемента нет;
+- toArray() - возвращает новый массив, состоящий из элементов связного списка.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Реализовать статические публичные методы:
+- fromIterable(iterable) - возвращает новый LinkedList, элементами которого служат элементы переданной итерируемой сущности. Если сущность не является итерируемой генерировать ошибку.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Homework 6
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_6)
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Создать класс Car.
+В нём должны быть свойства:
+- brand (строка от 1 до 50 символов включительно)
+- model (строка от 1 до 50 символов включительно)
+- yearOfManufacturing (число от 1900 до текущего года включительно)
+- maxSpeed (число от 100 до 300 км/ч)
+- maxFuelVolume (число в литрах от 5 до 20)
+- fuelConsumption (число в л/100км)
+- currentFuelVolume (число в литрах, по умолчанию 0)
+- isStarted (логический тип, по умолчанию false)
+- mileage (число в километрах, по умолчанию 0)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+И методы:
+- start()
+  Если заведена, выкидывать ошибку с текстом 'Машина уже заведена'
+  Если не заведена, перевести соответствующий флаг в нужное состояние
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+- shutDownEngine()
+  Если не заведена, выкинуть ошибку с текстом 'Машина ещё не заведена'
+  Если заведена, перевести соответствующий флаг в нужное состояние
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+- fillUpGasTank(кол-во топлива в литрах)
+  Если введено что-либо, кроме числа, выкидывать ошибку с текстом 'Неверное количество топлива для заправки'
+  Если введено отрицательное число или 0, выкидывать ошибку с текстом 'Неверное количество топлива для заправки'
+  Если в результате заправки макс. объем топлива будет превышен, то не производить заправку, а выкидывать ошибку с текстом 'Топливный бак переполнен'
+  В иных случаях увеличить текущий показатель топлива
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- drive(скорость, кол-во часов)
+  Если в качестве скорости поступает что-то кроме числа, отрицательное число или 0, то выкидывать ошибку с текстом 'Неверная скорость'
+  Если в качестве количества часов поступает что-то кроме числа, отрицательное число или 0, выкидывать ошибку с текстом 'Неверное количество часов'
+  Если скорость превышает максимальную, то выкидывать ошибку с текстом 'Машина не может ехать так быстро'
+  Если машина не заведена, выкидывать ошибку с текстом 'Машина должна быть заведена, чтобы ехать'
+  Если недостаточно топлива для совершения поездки, выкидывать ошибку с текстом 'Недостаточно топлива'
+  В иных случаях вычесть необходимое топливо и добавить пробег
 
-## License
-For open source projects, say how it is licensed.
+Ни одно из свойств не должно иметь возможности изменяться извне. Все должны быть приватными. Для свойств brand, model, yearOfManufacturing, maxSpeed, maxFuelVolume, fuelConsumption реализовать соответствующие геттеры (для получения текущего значения) и сеттеры (для установки нового значения, согласно ограничениям). Для свойств currentFuelVolume, isStarted и mileage реализовать только геттеры (для получения текущего значения). Все геттеры и сеттеры должны иметь те же имена, что описаны выше.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Homework 7
+[Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_7)
+[Deploy]()
+
+Написать калькулятор.
+
+Поле для ввода должно быть заблокировано от прямого пользовательского ввода (readonly). Ввод должен осуществляться путём нажатия на кнопки калькулятора (обязательно) или же клавиши клавиатуры (опционально). Числа выводим с точностью до 8 знака после запятой включительно. По 9 знаку округляем и всё ненужное обрезаем.
+
+Как именно реализовывать (через отображение всех составляющих операции, через отображение только последнего введённого значения, ещё как-то) - неважно. Главное, чтобы соблюдался обычный флоу любого калькулятора. Ввод числа, выбор операции, ввод ещё одного числа, выбор новой операции или же вывод результата и т.д.
+
