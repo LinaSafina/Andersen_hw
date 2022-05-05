@@ -1,10 +1,14 @@
 # Andersen
 
 Homeworks
+
 Задания по JS из курса Basic JS компании Andersen (Aston)
+
+[Deploy]( https://linasafina.github.io/Andersen_hw/)
 
 ## Homework 1
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_1)
+[Deploy](https://linasafina.github.io/Andersen_hw/homework_1/index.html)
 
 1) С помощью встроенной браузерной функции prompt поочерёдно ввести два значения. Если оба значения являются валидными числами, то вывести в консоли результат в виде первого числа в системе счисления второго.
 Если хотя бы одно из введённых значений является некорректным числом, вывести в консоли сообщение: "Некорректный ввод!" и завершить программу.
@@ -21,6 +25,7 @@ Homeworks
 
 ## Homework 2
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_2)
+[Deploy](https://linasafina.github.io/Andersen_hw/homework_2/index.html)
 
 1) Написать свою функцию для глубокого копирования объектов. При этом алгоритм должен осуществляться вручную (никаких вариантов с использованием готовых библиотек или JSON.stringify() + JSON.parse(), за это сразу 0 баллов за первую задачу). Функция должна называться makeObjectDeepCopy. Это важно. Принимать функция должна один параметр - объект, копию которого нужно сделать.
 
@@ -51,12 +56,14 @@ for (let item of myIterable) { // Ошибка!
 
 ## Homework 3
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_3)
+[Deploy](https://linasafina.github.io/Andersen_hw/homework_3/index.html)
 
 Написать свою реализацию встроенной функции массивов filter (map, reduce). Назвать функцию myFilter и сделать так, чтобы любой массив мог использовать данную функцию как "родную". В качестве параметров он должен принимать callback-функцию и как необязательный параметр объект, который будет использован в качестве this в рамках внутренних вызовов данной callback-функции.
 В конечном итоге ваша реализация myFilter должна работать точно также как и встроенный метод filter. Callback-функция, переданная в качестве параметра, также должна вызываться с теми же параметрами, что и оригинал (элемент, индекс, массив).
 
 ## Homework 4
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_4)
+[Deploy](https://linasafina.github.io/Andersen_hw/homework_4/index.html)
 
 Реализовать функцию concatStrings, которая может быть вызвана следующим образом: concatStrings('first')('second')('third')().
 Результатом вызова данной функции должна являться новая строка, содержащая все переданные таким образом строки.
@@ -80,6 +87,8 @@ for (let item of myIterable) { // Ошибка!
 
 ## Homework 5
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_5)
+[Deploy - Linked List](https://linasafina.github.io/Andersen_hw/homework_5/linkedlist.html)
+[Deploy - Stack](https://linasafina.github.io/Andersen_hw/homework_5/stack.html)
 
 Создать класс Stack.
 В качестве единственного необязательного параметра конструктор Stack должен принимать максимальное количество элементов в стеке. Если параметр является невалидным числом, генерировать ошибку. Если параметр не указан, задавать максимальный размер стека равным 10.
@@ -116,6 +125,7 @@ module.exports = { Stack };
 
 ## Homework 6
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_6)
+[Deploy](file:///C:/Users/isako/Desktop/Andersen/Homeworks/andersen/homework_6/index.html)
 
 Создать класс Car.
 В нём должны быть свойства:
@@ -156,7 +166,7 @@ module.exports = { Stack };
 
 ## Homework 7
 [Решение](https://github.com/LinaSafina/Andersen_hw/tree/main/homework_7)
-[Deploy]()
+[Deploy](https://linasafina.github.io/Andersen_hw/homework_7/index.html)
 
 Написать калькулятор.
 
